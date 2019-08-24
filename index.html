@@ -2,33 +2,41 @@
 <html lang="en">
 <head>
     <title>Exercise 2</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./style.css" />
 </head>
 <body>
     <center>
         <h1>Kalkulator</h1>
     </center>
-    <div class="container">
-        <div class="row kalkulator">
-            <div class="col-md-6">
-                <form id="calculatingForm">
-                    <input id="operanda" type="text" name="operanda" placeholder="Operand A" />
-                    
-                        <select id="operator">
-                            <option value="x">x</option>
-                            <option value="/">/</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
-                        </select>
-                    
-                    <input id="operandb" type="text" name="operandb" placeholder="Operand B" />
+    <div class="container wrapcalc">
+    <form id="calculatingForm">
+            <div class="row">
+                
+                <div class="col">
+                    <input class="form-control" id="operanda" type="text" name="operanda" placeholder="Operand A" />
+                </div>
+                <div class="col">
+                    <select id="operator" class="form-control">
+                        <option selected="selected">Select Operator</option>
+                        <option value="x">x</option>
+                        <option value="/">/</option>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input id="operandb" class="form-control" type="text" name="operandb" placeholder="Operand B" />
+                </div>
+                <div class="col">
                     <input id="submit" type="submit" class="btn btn-primary" value="Submit" />
-                    <input id="result" type="text" name="result" disabled placeholder="Result" />
-                </form>
+                </div>
+                <div class="col">
+                    <input id="result" class="form-control" type="text" name="result" disabled placeholder="Result" />
+                </div>
             </div>
+            </form>
         </div>
-    </div>
     <script>
         document.getElementById("calculatingForm").onsubmit = function(e) {
             e.preventDefault()
